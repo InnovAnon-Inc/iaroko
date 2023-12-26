@@ -175,7 +175,8 @@ for color, color_desc in pairs(iaroko.color_descs) do
 			or (mode == 2 and node.name == "air")
 			then
 				flag = true
-				minetest.set_node(adjpos, {name="iaroko:goo_"..color})
+				--minetest.set_node(adjpos, {name="iaroko:goo_"..color})
+				minetest.swap_node(adjpos, {name="iaroko:goo_"..color})
 				local adjmeta = minetest.get_meta(adjpos)
 				--adjmeta:set_int("mode",   mode)
 				adjmeta:set_int("mode_1", 0)
@@ -196,7 +197,8 @@ for color, color_desc in pairs(iaroko.color_descs) do
 			local mode_1 = meta:get_int("mode_1") > 0
 			local mode_2 = meta:get_int("mode_2") > 0
 			if     mode_1 and     mode_2 then
-				minetest.set_node(pos, {name = "iaroko:goo_"..color_desc.off})
+				--minetest.set_node(pos, {name = "iaroko:goo_"..color_desc.off})
+				minetest.swap_node(pos, {name = "iaroko:goo_"..color_desc.off})
 				meta = minetest.get_meta(pos)
 				meta:set_string("contributors", contrib)
 				meta:set_int("mode",   3)

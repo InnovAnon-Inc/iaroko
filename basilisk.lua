@@ -111,7 +111,8 @@ minetest.register_node("iaroko:basilisk_"..color, {
             -- Switch to the next color node
             local next_color = color_desc.off
             local next_node = "iaroko:basilisk_"..next_color
-            minetest.set_node(pos, {name = next_node})
+            --minetest.set_node(pos, {name = next_node})
+            minetest.swap_node(pos, {name = next_node})
 
             -- Call the on_construct callback to start the timer for the new node
             minetest.registered_nodes[next_node].on_construct(pos)
