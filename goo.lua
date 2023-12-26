@@ -76,9 +76,13 @@ local template = {
 		if itemmode_2 == nil then
 			itemmode_2   = 0
 		end
-		if contributors == nil then
-			contributors = ""
+		if contributors ~= nil then
+			contributors = minetest.deserialize(contributors)
+		else
+			contributors = {}
 		end
+		contributors[placer:get_player_name()] = true
+		contributors = minetest.serialize(contributors)
 
 		local meta = minetest.get_meta(pos)
 		local mode = meta:get_int("mode")

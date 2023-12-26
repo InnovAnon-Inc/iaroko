@@ -55,7 +55,7 @@ end
 -- TODO "hashes" should use blockchain-like passphrases
 
 local DEBUG_CAST_SPELL = true
-local TEST_CAST_SPELL  = true
+local TEST_CAST_SPELL  = false
 local hash_len         = 40
 function iaroko.cast_spell(user, actual, expected, random_lvl)
 	assert(user ~= nil)
@@ -73,13 +73,14 @@ function iaroko.cast_spell(user, actual, expected, random_lvl)
 	--	return false
 	--end
 
-	if TEST_CAST_SPELL
-	or user:get_player_name() == "JonSkeet" then
+	--if TEST_CAST_SPELL
+	--or user:get_player_name() == "JonSkeet" then
 		-- it's a lot easier if we're not crypto mining
 		actual = minetest.sha1(actual)
 		print('cast_spell()[actual]   2: '..actual)
 		assert(#actual == hash_len)
-	end
+	--else hash anyway
+	--end
 	expected = minetest.sha1(expected)
 
 	local set_id = user:get_player_name()

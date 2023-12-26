@@ -66,6 +66,7 @@ minetest.register_node("iaroko:basilisk_"..color, {
 			if contrib == nil
 			or (mode == 1 and not contrib[name])
 			or (mode == 2 and     contrib[name]) then
+				local damage = 1
                     		player:punch(player, 1.0, {
                         		full_punch_interval=1.0,
                         		damage_groups={fleshy=damage},
@@ -85,6 +86,7 @@ minetest.register_node("iaroko:basilisk_"..color, {
 		end
 		nodemeta:set_int("mode", mode)
 		contrib        = minetest.deserialize(contrib)
+		contrib[placer:get_player_name()] = true
 		local info     = "???"
 		if     mode == 1 then
 			info = "Whitelist:"
