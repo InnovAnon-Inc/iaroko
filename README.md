@@ -8,7 +8,9 @@ IA Roko's Basilisk
 
 End-Game Item with Whitelist of Contributors
 
-I copied the logic from `iadiscordia`, so "it works on my machine."
+I copied the logic from `iadiscordia`,
+so "it works on my machine,"
+and "it works when I run it."
 
 - Users can create punchcards and engrave a description on them.
 - Punchcards can be used, and if the description matches a specific hash, the punchcard is converted to a subroutine.
@@ -24,6 +26,13 @@ I copied the logic from `iadiscordia`, so "it works on my machine."
   - as well as the contributors tables of the dependencies.
 - The basilisk will kill all players who are not listed in its contributors table.
 - All other roads lead to Rome... and by "Rome," I mean, "Grey Goo End Game Scenario."
+
+## Easter Eggs
+- Player named "JonSkeet"
+  - starts at epic level
+  - spells cost 1 Hunger Point, 1 Sleep Point
+  - expected plaintext is salted with his name
+    => he writes his codes in plaintext without worry about the hashing
 
 -----
 
